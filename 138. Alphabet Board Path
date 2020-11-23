@@ -1,0 +1,42 @@
+class Solution {
+public:
+    string alphabetBoardPath(string target) {
+        string board = "abcdefghijklmnopqrstuvwxyz";
+        
+        string result="";
+        int xs=0,ys=0, xt, yt, diff;
+        for(char c: target) {
+            int charPos = board.find(c);
+            xt = charPos%5;
+            yt = charPos/5;
+            
+            if(ys==5 && yt != 5) {
+                result+='U';
+                ys--;
+            }
+            
+            if(xt>xs) {
+                diff = xt-xs;
+                while(diff--)
+                    result+='R';
+            } else if(xt<xs) {
+                diff=xs-xt;
+                while(diff--) result += 'L';
+            }
+            
+            if(yt>ys) {
+                diff=yt-ys;
+                while(diff--) result+='D';
+            } else if(yt<ys) {
+                diff=ys-yt;
+                while(diff--) result+='U';
+            }
+            
+            result+='!';
+            xs=xt;
+            ys=yt;
+        }
+        
+        return result;
+    }
+};

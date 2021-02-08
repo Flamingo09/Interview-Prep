@@ -7,11 +7,12 @@ There is a cat 'C' in a maze n*m, with empty grounds 'G' and exit cells 'E' and 
 Return the minimum amount of time for the cat to reach the nearest 'E' cell.
 
 example : 
+```
 4*4 maze
 
 GCSG
 GGGG
 EGGG
 SGGG
-
+```
 ans -> 2 seconds.
